@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ClovaModule } from './clova/clova.module';
 import { RedisModule } from './common/cache/redis/redis.module';
+import { LoggerModule } from './common/log/logger.module';
 import { SpellModule } from './spell/spell.module';
 
 @Module({
@@ -12,8 +12,8 @@ import { SpellModule } from './spell/spell.module';
     SpellModule,
     ClovaModule,
     RedisModule.register(),
+    LoggerModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
