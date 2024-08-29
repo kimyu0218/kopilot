@@ -8,7 +8,7 @@ export async function axiosPost(
   try {
     return await axios.post(url, data, { headers: headers });
   } catch (err: unknown) {
-    throw new Error(`[axios] 요청 실패 '${url}'`);
+    throw new Error(`axios 요청에 실패했습니다. '${url}'`);
   }
 }
 
@@ -24,6 +24,6 @@ export async function fetchPost(
       body: JSON.stringify(data),
     });
   } catch (err: unknown) {
-    throw new Error(`[fetch] 요청 실패 '${url}'`);
+    throw new Error(`fetch 요청에 실패했습니다. '${url}'`);
   }
 }
