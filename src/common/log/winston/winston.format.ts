@@ -2,7 +2,7 @@ import { format } from 'winston';
 
 const printfFormat = () =>
   format.printf(({ level, message, timestamp, stack }) => {
-    const logMessage: string = `[${level}]\t${timestamp}\t${message}`;
+    const logMessage: string = `[API Server] - ${timestamp}\t${level} ${message}`;
     return stack ? `${logMessage}\n${stack}` : logMessage;
   });
 
